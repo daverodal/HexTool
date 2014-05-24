@@ -2,6 +2,7 @@ module.exports = function(environment) {
   var ENV = {
     baseURL: '/phpDir',
     locationType: 'hash',
+    adapterURL: "http://localhost/phpDir/rest/index.php",
     FEATURES: {
       // Here you can enable experimental features on an ember canary build
       // e.g. 'with-controller': true
@@ -26,7 +27,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/lance';
+    ENV.adapterURL = "http://davidrodal.com/lance/rest/index.php"
   }
 
   return ENV;

@@ -15,7 +15,6 @@ export default Ember.Object.extend({
     name:null,
     number:null,
     label:function(){
-        var len = this.get('type.length');
         var all = this.get('controller.showOne');
         var col = this.get('type');
         var ret = "";
@@ -23,7 +22,7 @@ export default Ember.Object.extend({
             var color = "black";
             var c;
             c = col[i].get('name');
-            if(all && c != this.get('controller.selectedColor')){
+            if(all && c !== this.get('controller.selectedColor')){
                 continue;
             }
             var disp = "X";
@@ -139,20 +138,19 @@ export default Ember.Object.extend({
         var col = this.get('type');
         var ret = "";
         for(var i = 0;i < col.length;i++){
-            var color = "black";
             var c;
             c = col[i].get('name');
-            if(c == "SpecialHexA"){
+            if(c === "SpecialHexA"){
                 ret += "$specialHexA[] = "+this.get('number')+";<br>";
-            }else  if(c == "SpecialHexB"){
+            }else  if(c === "SpecialHexB"){
                 ret += "$specialHexB[] = "+this.get('number')+";<br>";
-            }else  if(c == "SpecialHexC"){
+            }else  if(c === "SpecialHexC"){
                 ret += "$specialHexC[] = "+this.get('number')+";<br>";
-            }else  if(c == "ReinforceZoneA"){
+            }else  if(c === "ReinforceZoneA"){
                 ret += "$this->terrain->addReinforceZone("+this.get('number')+",'A');<br>";
-            }else       if(c == "ReinforceZoneB"){
+            }else       if(c === "ReinforceZoneB"){
                 ret += "$this->terrain->addReinforceZone("+this.get('number')+",'B');<br>";
-            }else       if(c == "ReinforceZoneC"){
+            }else       if(c === "ReinforceZoneC"){
                 ret += "$this->terrain->addReinforceZone("+this.get('number')+",'C');<br>";
             }else{
                 ret += "$this->terrain->addTerrain("+this.get('number')+" ,"+this.get('hexpartType')+" , \""+ c.toLowerCase()+"\");<br>";

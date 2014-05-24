@@ -1,3 +1,4 @@
+import HexPart from "../mixins/hex-part";
 export default Ember.Object.create({
     x:false,
     y:false,
@@ -7,19 +8,19 @@ export default Ember.Object.create({
     name:false,
     prefix:false,
 
-    hexpartInit:function(name){
-// Hexpart(name)
-        if ( Hexpart.arguments.length == 1 )
+    hexpartInit:function(){
+// HexPart(name)
+        if ( HexPart.arguments.length === 1 )
         {
-            this.name = Hexpart.arguments[0];
+            this.name = HexPart.arguments[0];
             this.calculateHexpart();
         }
 
-// Hexpart(x,y)
-        if ( Hexpart.arguments.length == 2 )
+// HexPart(x,y)
+        if ( HexPart.arguments.length === 2 )
         {
-            this.x = Hexpart.arguments[0];
-            this.y = Hexpart.arguments[1];
+            this.x = HexPart.arguments[0];
+            this.y = HexPart.arguments[1];
 
             this.calculateHexpartType();
             this.calculateHexpartName();
@@ -33,38 +34,6 @@ export default Ember.Object.create({
 
         this.calculateHexpartType();
 //    this.calculateHexpartName();
-    },
-
-    setXYwithNameAndType:function( hexagonName, hexpartType )
-    {
-        var hexagon = new Hexagon(hexagonName);
-
-        this.x = hexagon.getX();
-        this.y = hexagon.getY();
-
-        switch ( hexpartType ) {
-
-            case HEXAGON_CENTER:
-
-                break;
-
-            case BOTTOM_HEXSIDE:
-
-                this.y = this.y + 2;
-                break;
-
-            case LOWER_LEFT_HEXSIDE:
-
-                this.x = this.x - 1;
-                this.y = this.y + 1;
-                break;
-
-            case UPPER_LEFT_HEXSIDE:
-
-                this.x = this.x - 1;
-                this.y = this.y - 1;
-                break;
-        }
     },
 
     setName:function( hexpartName )
@@ -130,110 +99,13 @@ export default Ember.Object.create({
         }
     },
 
-    calculateHexpartName:function() {
-
-        var name;
-
-        // center = 1, lower = 2, lower left = 3, upper left = 4
-
-        switch ( this.hexpartType ) {
-
-            case 1:
-                this.refHexpartX = this.x;
-                this.refHexpartY = this.y;
-                this.prefix = "hexpart:";
-                break;
-
-            case 2:
-                this.refHexpartX = this.x;
-                this.refHexpartY = this.y - 2;
-                this.prefix = "hexpart_";
-                break;
-
-            case 3:
-                this.refHexpartX = this.x + 1;
-                this.refHexpartY = this.y - 1;
-                this.prefix = "hexpart\\";
-                break;
-
-            case 4:
-                this.refHexpartX = this.x + 1;
-                this.refHexpartY = this.y + 1;
-                this.prefix = "hexpart/";
-                break;
-        }
-
-        if ( this.hexpartType > 0 ) {
-
-            var refHexagon = new Hexagon();
-
-            refHexagon.setXY(this.refHexpartX, this.refHexpartY);
-            this.name = this.prefix + refHexagon.getName();
-
-        } else {
-
-            this.hexpartName = "null";
-        }
-    },
-
-    calculateHexpart:function()
-    {
-        // center = :, lower = _, lower left = \\, upper left = /
-        //    since \ is a javascript escape char, need to check for \\
-
-        var hexagon = new Hexagon();
-        hexagon.setNumber(this.name.substr(8,4));
-
-        var hexpartTypeLetter = this.name.charAt(7);
-
-        this.refHexpartX = hexagon.getX();
-        this.refHexpartY = hexagon.getY();
-
-        switch ( hexpartTypeLetter ) {
-
-            case ':':
-
-                this.hexpartType = 1;
-                this.x = this.refHexpartX;
-                this.y = this.refHexpartY;
-                break;
-
-            case '_':
-
-                this.hexpartType = 2;
-                this.x = this.refHexpartX;
-                this.y = this.refHexpartY + 2;
-                break;
-
-            case '\\':
-
-                this.hexpartType = 3;
-                this.x = this.refHexpartX - 1;
-                this.y = this.refHexpartY + 1;
-                break;
-
-            case '/':
-
-                this.hexpartType = 4;
-                this.x = this.refHexpartX - 1;
-                this.y = this.refHexpartY - 1;
-                break;
-
-            default:
-
-                this.hexpartType = 1;
-                this.x = this.refHexpartX;
-                this.y = this.refHexpartY;
-                break;
-        }
-    },
 
     equals:function(hexpart)
     {
         var isEqual;
         isEqual = false;
 
-        if ( this.x == hexpart.getX() && this.y == hexpart.getY() )
+        if ( this.x === hexpart.getX() && this.y === hexpart.getY() )
         {
             isEqual = true;
         }

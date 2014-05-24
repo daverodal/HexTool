@@ -28,9 +28,8 @@ export default Ember.Mixin.create({
 
     myInit:function(mapData)
     {
-        debugger;
         var b = mapData.get('b');
-        var a = mapData.get('a')
+        var a = mapData.get('a');
         var c =  mapData.get('c');
 
         var xOff = (a + c) * 2 - (c/2 + a);
@@ -115,7 +114,7 @@ export default Ember.Mixin.create({
         var $evenColumnShiftDown = true;
         x = ( (this.get('hexagonX') -$minX ) / 2 ) + 1;
 
-        if($evenColumnShiftDown == true)
+        if($evenColumnShiftDown === true)
         {
             y = Math.floor(((this.get('hexagonY') - $minY) / 4) + 1);
         } else {

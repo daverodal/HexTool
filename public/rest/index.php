@@ -1,5 +1,5 @@
 <?php
-define("MAPROOT","/Users/david/maproot");
+define("MAPROOT","../../maproot");
 if($_SERVER['REQUEST_METHOD'] == 'PUT'){
     $putdata = fopen("php://input", "r");
     $pInfo = $_SERVER['PATH_INFO'];

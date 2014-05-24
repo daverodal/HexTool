@@ -1,5 +1,5 @@
 export default Ember.Mixin.create({
-  draw: function (x, y, color, gridcolor) {
+  draw: function (x, y, color) {
     var A, B, C;
     A = this.get('a') - 0;
     B = this.get('b') - 0;
