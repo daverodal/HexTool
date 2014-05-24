@@ -43,9 +43,10 @@ Install Ember-CLI npm module using the "global" option so that you have access t
 npm install -g ember-cli
 ```
 
-You can find the Ember CLI documentation at https://github.com/stefanpenner/ember-cli. Note that the Ember CLI is based upon the Ember App Kit (but with awesome cool CLI tools). Make sure to read about Ember App kit to understand how the Connect PAAM project works: http://iamstef.net/ember-app-kit/
+You can find the Ember CLI documentation at https://github.com/stefanpenner/ember-cli.
+Note that the Ember CLI is based upon the Ember App Kit (but with awesome cool CLI tools).
 
-then clone this repository
+#### Clone this repository
 
 ```
 git clone https://github.com/daverodal/HexTool.git
