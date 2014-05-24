@@ -72,22 +72,24 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     if($id){
         $model = json_decode(file_get_contents(MAPROOT."/$modelName/$id"));
         $model->$singleModel->id = $id;
-//        var_dump($model);
         $top->$singleModel = $model->$singleModel;
         header('Content-type: application/json');
         echo json_encode($top);
         exit();
     }
-    if ($handle = opendir(MAPROOT."/$modelName")) {
+    $dirs = glob(MAPROOT."/$modelName/*");
+    if (count($dirs) >= 0) {
 
 
         /* This is the correct way to loop over the directory. */
-        while (false !== ($entry = readdir($handle))) {
+        foreach ($dirs as $entry) {
             if($entry === "." || $entry === ".." || $entry === "_id"){
                 continue;
             }
-            $model = json_decode(file_get_contents(MAPROOT."/$modelName/$entry"));
-            $model->$singleModel->id = $entry-0;
+            $model = json_decode(file_get_contents($entry));
+            $matches = array();
+            preg_match("/[^\/]*$/",$entry,$matches);
+            $model->$singleModel->id = $matches[0]-0;
             $ret[] = $model->$singleModel;
         }
             $top->$modelName = $ret;
