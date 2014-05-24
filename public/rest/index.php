@@ -72,6 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     if($id){
         $model = json_decode(file_get_contents(MAPROOT."/$modelName/$id"));
         $model->$singleModel->id = $id;
+//        var_dump($model);
         $top->$singleModel = $model->$singleModel;
         header('Content-type: application/json');
         echo json_encode($top);
@@ -80,10 +81,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $dirs = glob(MAPROOT."/$modelName/*");
     if (count($dirs) >= 0) {
 
-
         /* This is the correct way to loop over the directory. */
         foreach ($dirs as $entry) {
-            if($entry === "." || $entry === ".." || $entry === "_id"){
+            if(preg_match("/\/_id$/",$entry)){
                 continue;
             }
             $model = json_decode(file_get_contents($entry));
