@@ -1,0 +1,47 @@
+
+
+<div class="control-panel">
+    <p>Url
+        {{input type="text" class="myClass" valueBinding="mapUrl"}}
+        Num X
+        {{input type="text" valueBinding="numX"}}
+        Num Y
+        {{input type="text" valueBinding="numY"}}
+
+        MapWidth
+        {{input type="text" class="myClass" valueBinding="mapWidth"}}
+    <p>x
+        <button
+            {{action decX}} > - </button>
+        {{input type="text" valueBinding="x"}}
+        <button
+            {{action incX}} > + </button>
+        y
+        <button
+            {{action decY }} > - </button>
+        {{input type="text" valueBinding="y"}}
+        <button
+            {{action incY }} > + </button>
+    </p>
+    Perfect Hexs
+    {{view Ember.Checkbox checkedBinding="controllers.map.perfectHexes"}}
+    {{#if controllers.map.perfectHexes}}
+        Size
+        <button
+            {{action decHexSize }} > - </button>
+        {{input type="text" valueBinding="hexSize"}}
+        <button
+            {{action incHexSize }} > + </button>
+
+        Hex Side Width {{a}} Half Hex Height {{b}}  Hex Side Length {{c}}
+    {{else}}
+        Hexside Width {{input type="text" valueBinding="a"}}
+        Half Hex Height {{input type="text" valueBinding="b"}}
+        Hexside Length {{input type="text" valueBinding="c"}}
+    {{/if}}
+    a{{isMe}}b
+    <button
+        {{action save}}>save</button>
+    </p>
+</div>
+{{view "image-view"}}

@@ -1,0 +1,19 @@
+{{view Ember.Select contentBinding="colors" selectionBinding="selectedColor"  }}
+<button {{action "save"}}>save these hexes dude</button>
+
+Show HexTypes {{view Ember.Checkbox checkedBinding="controller.showData"}}
+
+Show only selected terrain Types {{view Ember.Checkbox checkedBinding="controller.showOne"}}
+
+
+<div id="terrainWrapper">
+    {{view "clickable-image-view"}}
+    {{#if controller.showData}}
+        {{#each controller.hexData}}
+            <div class="terrain" {{bind-attr style=style}}>{{{label}}}</div>
+        {{/each}}
+    {{/if}}
+</div>
+{{#each controller.hexData}}
+    {{{code}}}
+{{/each}}

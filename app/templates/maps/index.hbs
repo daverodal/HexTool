@@ -1,0 +1,12 @@
+<h2> Pick a map to edit </h2>
+<ul>
+    <li>{{#link-to 'maps.new'}}New{{/link-to}}</li>
+    {{#each model}}
+        <li>
+            {{#link-to 'map' this}}{{mapUrl}}
+                <small class='muted'>by {{numX}}</small>
+            {{/link-to}}
+        </li>
+    {{/each}}
+</ul>
+{{outlet}}aadd

@@ -1,0 +1,27 @@
+<li>
+    <button>{{#link-to 'map.edit'}}Edit{{/link-to}}</button>
+    <button>{{#link-to 'map.hexes'}}Hexes{{/link-to}}</button>
+</li>
+<div class="control-panel">
+
+    <ul>
+        <li><span>Urleee:</span> {{mapUrl}}</li>
+        <li><span>Width:</span> {{mapWidth}}</li>
+        <li><span>Num X:</span> {{numX}}</li>
+        <li><span>Num Y:</span> {{numY}}</li>
+        <li><span>x:</span> {{x}}</li>
+        <li><span>y:</span> {{y}}</li>
+        <li><span>Hexside Width:</span> {{a}}</li>
+        <li><span>Half Hex Height:</span> {{b}}</li>
+        <li><span>Hexside Length:</span> {{c}}</li>
+    </ul>
+        <pre>
+{{debugger}}
+            $this->mapViewer[$player]->setData({{controller.originX}} , {{controller.originY}}, // originX, originY
+            {{b}}, {{b}}, // top hexagon height, bottom hexagon height
+            {{a}}, {{c}}// hexagon edge width, hexagon center width
+                );
+        </pre>
+    </p>
+</div>
+{{view "image-view"}}
