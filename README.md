@@ -80,4 +80,13 @@ and run
 ember server
 ```
 
+look at rest/index.php
+
+it wants a direcoty maproot and a dir maps in there. It also wants a file _id that has 0 in it.
+
+make that and point the define in index.php there.
+
+
+:(
+
 (cross fingers a lot)
