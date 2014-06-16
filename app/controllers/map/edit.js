@@ -23,8 +23,13 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick, {
         save: function () {
 //                this.set('mapWidth',this.get('imageWidth'));
 //                this.set('mapHeight',this.get('imageHeight'));
-            this.get('model').save().then(this.transitionToRoute('map'));
-
+            var that = this;
+            this.get('hexStr').then(function(){
+                that.get('model').save().then(that.transitionToRoute('map'));
+            },function(){
+                alert("Please Login");
+                window.location = "/";
+            });
         },
         decHexSize: function () {
             this.set('blahblah',3);

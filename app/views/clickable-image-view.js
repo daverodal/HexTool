@@ -47,16 +47,21 @@ export default ImageView.extend({
     },
     didInsertElement: function () {
         this._super();
-        var str = this.get('controller.model.hexes');
-        var arr = JSON.parse(str);
-        var hexes = Ember.A();
-        if (arr) {
-            for (var i = 0; i < arr.length; i++) {
-                var ter = Terrain.create(arr[i]);
-                ter.set('controller', this.get('controller'));
-                hexes.pushObject(ter);
+//        var str = this.get('controller.model.hexes');
+        var hhStr = this.get('controller.model.hexStr');
+        var that = this;
+        hhStr.then(function(hexStr){
+            var str = hexStr.get('hexEncodedStr');
+            var arr = JSON.parse(str);
+            var hexes = Ember.A();
+            if (arr) {
+                for (var i = 0; i < arr.length; i++) {
+                    var ter = Terrain.create(arr[i]);
+                    ter.set('controller', that.get('controller'));
+                    hexes.pushObject(ter);
+                }
             }
-        }
-        this.set('controller.hexData', hexes);
-    }
+            that.set('controller.hexData', hexes);
+        });
+     }
 });

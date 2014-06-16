@@ -1,12 +1,22 @@
 export default Ember.ObjectController.extend({
-  actions: {
-    save: function () {
-      var that = this;
-      var model = this.store.createRecord('map', {mapWidth:"width:auto",mapUrl: "http://davidrodal.com/Battle/js/MCW.png"});
-      model.save().then(function () {
-          that.transitionToRoute('map', model.get('id'));
+    actions: {
+        save: function () {
+            var that = this;
+            var model = this.store.createRecord('map', {mapWidth: "width:auto", mapUrl: "http://davidrodal.com/Battle/js/MCW.png"});
+            model.save().then(function () {
+                var map = model;
+                var hexStr = that.store.createRecord('hexStr', {map: map, hexEncodedStr: '[]'});
+                hexStr.save().then(function (hexStr) {
+                    map.set('hexStr', hexStr);
+                    that.transitionToRoute('map', model.get('id'));
+                },function(){
+                    alert("Please Login");
+                    window.location = "/";
+                });
+            },function(){
+                alert("Please Login");
+                window.location = "/";
+            });
         }
-      );
     }
-  }
 });

@@ -9,6 +9,7 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick,   HexPart,  {
         showOne:false,
         actions:{
             save:function(){
+                var that = this;
                 var model = this.get('model');
                 var hexData = this.get('hexData');
                 var len = hexData.length;
@@ -16,11 +17,17 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick,   HexPart,  {
                     hexData.objectAt(i).set('controller',false);
                 }
                 var str = JSON.stringify(hexData);
-                model.set('hexes', str);
-                var id = model.get('id');
-                model.save().then(function(){
+                var hexStr = model.get('hexStr').then(function(myHex){
+                    myHex.set('hexEncodedStr',str);
+                    myHex.save();
                 });
-                this.transitionToRoute('map',id);
+                var id = model.get('id');
+                model.save().then(function(model){
+                        that.transitionToRoute('map',id);
+                },function(){
+                    alert("Please Login");
+                    window.location = "/";
+                });
             },
             kill:function(){
                 this.set('hexData',Ember.A());

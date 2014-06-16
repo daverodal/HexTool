@@ -1,4 +1,5 @@
 export default DS.Model.extend({
+  hexStr:DS.belongsTo('hexStr', {async: true}),
   mapUrl: DS.attr('string'),
   myAttr: DS.attr('string'),
   mapWidth: DS.attr('string'),
