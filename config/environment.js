@@ -28,7 +28,9 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.baseURL = '/neo';
-    ENV.adapterURL = "http://davidrodal.com/Battle/index.php/rest/"
+      ENV.locationType = 'hash';
+
+      ENV.adapterURL = "http://davidrodal.com/Battle/index.php/rest/"
   }
 
   return ENV;

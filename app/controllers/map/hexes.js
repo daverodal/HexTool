@@ -16,9 +16,8 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick,   HexPart,  {
                 for(var i = 0;i< len;i++){
                     hexData.objectAt(i).set('controller',false);
                 }
-                var str = JSON.stringify(hexData);
                 var hexStr = model.get('hexStr').then(function(myHex){
-                    myHex.set('hexEncodedStr',str);
+                    myHex.set('hexEncodedStr',hexData);
                     myHex.save();
                 });
                 var id = model.get('id');

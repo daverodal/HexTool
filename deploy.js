@@ -5,7 +5,7 @@
         host:'davidrodal.com',
         username:'david',
         path: './dist',
-        remoteDir: '/lance',
+        remoteDir: '/neo',
 	port: 7822,
         privateKey: fs.readFileSync('privateKey_rsa')
     },

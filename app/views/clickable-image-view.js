@@ -51,8 +51,7 @@ export default ImageView.extend({
         var hhStr = this.get('controller.model.hexStr');
         var that = this;
         hhStr.then(function(hexStr){
-            var str = hexStr.get('hexEncodedStr');
-            var arr = JSON.parse(str);
+            var arr = hexStr.get('hexEncodedStr');
             var hexes = Ember.A();
             if (arr) {
                 for (var i = 0; i < arr.length; i++) {
