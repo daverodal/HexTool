@@ -10,7 +10,7 @@ Router.map(function() {
       this.route('hexes');
     });
   });
-  this.resource('about');
+  this.resource('login');
 });
 
 export default Router;

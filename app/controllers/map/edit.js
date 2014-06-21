@@ -21,14 +21,11 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick, {
 
     actions: {
         save: function () {
-//                this.set('mapWidth',this.get('imageWidth'));
-//                this.set('mapHeight',this.get('imageHeight'));
             var that = this;
             this.get('hexStr').then(function(){
                 that.get('model').save().then(that.transitionToRoute('map'));
             },function(){
-                alert("Please Login");
-                window.location = "/";
+                that.transitionTo('login');
             });
         },
         decHexSize: function () {
@@ -53,11 +50,7 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick, {
 
     },
     sizeChanged: function () {
-//      this.get('model').save();
         this.set('perfect', false);
         Ember.run.once(this, 'justOneTime');
-    }.observes('imageWidth','imageHeight'),
-    justOneTime: function () {
-//            this.doDraw(this.get('numX'), this.get('numY'));
-    }
+    }.observes('imageWidth','imageHeight')
 });

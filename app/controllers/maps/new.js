@@ -3,19 +3,19 @@ export default Ember.ObjectController.extend({
         save: function () {
             var that = this;
             var model = this.store.createRecord('map', {mapWidth: "width:auto", mapUrl: "http://davidrodal.com/Battle/js/MCW.png"});
-            model.save().then(function () {
+            model.save().then(function (model) {
                 var map = model;
                 var hexStr = that.store.createRecord('hexStr', {map: map, hexEncodedStr: '[]'});
                 hexStr.save().then(function (hexStr) {
                     map.set('hexStr', hexStr);
-                    that.transitionToRoute('map', model.get('id'));
+                    map.save().then(function(){
+                        that.transitionToRoute('map', model.get('id'));
+                    });
                 },function(){
-                    alert("Please Login");
-                    window.location = "/";
+                    that.transitionTo('login');
                 });
             },function(){
-                alert("Please Login");
-                window.location = "/";
+                that.transitionTo('login');
             });
         }
     }
