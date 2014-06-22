@@ -1,5 +1,8 @@
+import Ember from 'ember';
+
 var Router = Ember.Router.extend({
-  location: ENV.locationType
+    location: HexToolENV.locationType
+
 });
 
 Router.map(function() {

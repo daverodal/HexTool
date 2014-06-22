@@ -1,3 +1,4 @@
+import Ember from "ember";
 import HexPick from "../../mixins/hex-pick";
 
 export default Ember.ObjectController.extend(HexPick,{

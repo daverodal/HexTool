@@ -1,5 +1,6 @@
 import DrawMixin from "../mixins/draw";
 import HexPick from "../mixins/hex-pick";
+import Ember from "ember";
 
 var SIN = Math.sin(Math.PI / 3);
 
@@ -12,10 +13,10 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick, {
 
 
   changeLeft: function () {
-    $('canvas').css("left", this.get('x') + "px");
+    Ember.$('canvas').css("left", this.get('x') + "px");
   }.observes("x"),
   changeTop: function () {
-    $('canvas').css("top", this.get('y') + "px");
+    Ember.$('canvas').css("top", this.get('y') + "px");
   }.observes("y"),
   doSomethingElse: function () {
     if(!this.get('perfectHexes')){

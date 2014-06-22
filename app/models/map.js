@@ -1,3 +1,4 @@
+import DS from "ember-data";
 export default DS.Model.extend({
   hexStr:DS.belongsTo('hexStr', {async: true}),
   mapUrl: DS.attr('string'),

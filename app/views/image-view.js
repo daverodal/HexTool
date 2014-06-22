@@ -1,3 +1,5 @@
+import Ember from 'ember';
+var $ = Ember.$;
 export default Ember.View.extend({
   templateName: "image-view",
   myControllerBinding: 'controller.controllers.map',

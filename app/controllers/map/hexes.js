@@ -1,8 +1,21 @@
+import Ember from "ember";
 import HexPick from "../../mixins/hex-pick";
 import DrawMixin from "../../mixins/draw";
 import HexPart from "../../mixins/hex-part";
+import TerrainProperties from "../../models/terrain-properties";
 
 export default Ember.ObjectController.extend(DrawMixin, HexPick,   HexPart,  {
+        terrainProperties:function(){
+            var arr = Ember.A();
+            for(var i in TerrainProperties){
+                if(TerrainProperties.hasOwnProperty(i)){
+                    var obj = Object.create(TerrainProperties[i]);
+                    obj.key = i;
+                    arr.pushObject(obj);
+                }
+            }
+            return arr;
+        }.property(),
         needs: 'map',
         hexData:Ember.A(),
         showData:true,

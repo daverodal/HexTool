@@ -7,7 +7,6 @@
 # dependencies
 /node_modules
 /vendor/*
-!/vendor/_loader.js
 
 # misc
 /.sass-cache
@@ -19,4 +18,3 @@ Thumbs.db
 npm-debug.log
 testem.log
 /.idea
-privateKey_rsa

@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import TerrainType from "../models/terrain-type";
 import Terrain from "../models/terrain";
 import ImageView from "../views/image-view";

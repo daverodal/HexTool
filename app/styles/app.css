@@ -1,34 +1,86 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 html, body {
-  margin: 20px;
-}
+  margin: 20px; }
 
 .tutWrapper {
-    position: relative;
-    border: 10px red solid;
-}
+  position: relative;
+  border: 10px red solid; }
 
 #tutorial {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-}
+  position: absolute;
+  left: 0px;
+  top: 0px; }
 
 li {
-    list-style: none;
-}
-li span{
-    width:9em;
-    display:inline-block;
-    text-align: right;
-    margin-right:15px;
-}
-#terrainWrapper{
-    position:relative;
-}
-.terrain{
-    -webkit-user-select: none;
-    user-select:none;
-    pointer-events:none;
-    background:white;
-    font-weight:bold;font-size:13px;position:absolute;
-}
+  list-style: none; }
+
+li span {
+  width: 9em;
+  display: inline-block;
+  text-align: right;
+  margin-right: 15px; }
+
+#terrainWrapper {
+  position: relative; }
+
+.terrain {
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  background: white;
+  font-weight: bold;
+  font-size: 13px;
+  position: absolute; }
+
+.beige {
+  font-family: serif;
+  color: beige; }
+
+.orange {
+  font: blue;
+  color: orange; }
+
+.red {
+  color: red; }
+
+.black {
+  color: black; }
+
+.brown {
+  color: brown; }
+
+.blue {
+  color: blue; }
+
+.green {
+  color: green; }
+
+.purple {
+  color: purple; }
+
+#hexHeader {
+  max-width: 1900px;
+  margin-left: auto;
+  margin-right: auto; }
+  #hexHeader:after {
+    content: "";
+    display: table;
+    clear: both; }
+  #hexHeader .hexHeaderLeft {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    #hexHeader .hexHeaderLeft:last-child {
+      margin-right: 0; }
+  #hexHeader .hexHeaderRight {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    #hexHeader .hexHeaderRight:last-child {
+      margin-right: 0; }

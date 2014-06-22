@@ -1,4 +1,4 @@
-import { test, moduleFor } from 'ember-qunit';
+import { test, moduleFor, assert } from 'ember-qunit';
 import HexStr from '../../../transforms/hex-str';
 moduleFor('transform:hex-str', 'transform:hex-str', {
 });
@@ -22,19 +22,26 @@ test('should return an array for a [1,2,3] str', function() {
 });
 
 test(' Should be able to serialize and deserialze an object to self', function() {
+    expect(2);
     var transform = this.container.lookup('transform:hex-str');
 
     var expected  = [1,3,{love:2,peace:3,linux:5},4];
-    var output = transform.deserialize(transform.serialize(expected));
+    var output = transform.serialize(expected);
+    notEqual(output, expected, 'should not be same object');
 
+    output = transform.deserialize(output);
     deepEqual(output, expected, 'should return same object');
 });
 
 test(' Should be able to deserialize and serialze an string to self', function() {
+    expect(2);
     var transform = this.container.lookup('transform:hex-str');
 
     var expected  = '[1,2,3,{"a":"b","c":"d"},3]';
-    var output = transform.serialize(transform.deserialize(expected));
+    var output = transform.deserialize(expected);
+    notEqual(output, expected, 'should not be same object');
+
+    output = transform.serialize(output);
 
     deepEqual(output, expected, 'should return same object');
 });

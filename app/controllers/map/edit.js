@@ -1,5 +1,7 @@
+import Ember from "ember";
 import HexPick from "../../mixins/hex-pick";
 import DrawMixin from "../../mixins/draw";
+var $ = Ember.$;
 export default Ember.ObjectController.extend(DrawMixin, HexPick, {
     needs: 'map',
     checked:false,

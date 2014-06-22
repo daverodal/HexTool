@@ -1,3 +1,4 @@
+import Ember from "ember";
 export default Ember.Object.create({
     Town:{
         color:"black",
@@ -52,7 +53,7 @@ export default Ember.Object.create({
         disp:"F"
     },
     FortB:{
-        color:"reg",
+        color:"red",
         disp: "F"
     },
     Susnkenroad:{

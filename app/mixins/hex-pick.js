@@ -1,3 +1,4 @@
+import Ember from "ember";
 import HexPart from "../mixins/hex-part";
 export default Ember.Mixin.create({
     originX:false,

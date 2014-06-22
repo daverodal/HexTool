@@ -1,3 +1,4 @@
+import Ember from "ember";
 import TerrainType from "../models/terrain-type";
 import TerrainProperties from "../models/terrain-properties";
 export default Ember.Object.extend({
@@ -13,126 +14,24 @@ export default Ember.Object.extend({
     },
     type:Ember.A(),
     name:null,
+    color:null,
     number:null,
     label:function(){
         var all = this.get('controller.showOne');
         var col = this.get('type');
-        var ret = "";
+        var arr = [];
         for(var i = 0;i < col.length;i++){
-            var color = "black";
             var c;
             c = col[i].get('name');
             if(all && c !== this.get('controller.selectedColor')){
                 continue;
             }
-            var disp = "X";
             var prop = TerrainProperties.get(c);
             if(prop){
-                color = prop.color;
-                disp = prop.disp;
+                arr.push(prop);
             }
-//    switch(c){
-//      case 'Blocked':
-//        color = 'RED';
-//        disp = "B"
-//        break;
-//      case 'Town':
-//        color = 'black';
-//        disp = "T"
-//        break;
-//      case "River":
-//        color = 'blue';
-//        disp = "R"
-//        break;
-//      case "Forest":
-//        color = "green";
-//        disp = "F"
-//        break;
-//      case "Swamp":
-//        color = "green";
-//        disp = "S"
-//        break;
-//      case "Mountain":
-//        color = "brown";
-//        disp = "M";
-//        break;
-//      case "Roughone":
-//        color = "brown";
-//        disp = "R";
-//        break;
-//      case "Roughtwo":
-//        color = "black";
-//        disp = "R";
-//        break;
-//      case "Road":
-//        color = "red";
-//        disp = "O";
-//        break;
-//      case "Mine":
-//        color = "red";
-//        disp = "M";
-//        break;
-//      case "Minedroad":
-//        color = "purple";
-//        disp = "O";
-//        break;
-//      case "FortA":
-//        color = "blue";
-//        disp = "F";
-//        break;
-//      case "FortB":
-//        color = "red";
-//        disp = "F";
-//        break;
-//      case "Sunkenroad":
-//        color = "purple";
-//        disp = "O";
-//        break;
-//      case "Trail":
-//        color = "brown";
-//        disp = "O";
-//        break;
-//      case "Redoubt":
-//        color = "purple";
-//        disp = "B";
-//        break;
-//      case "SpecialHexA":
-//        color = "green";
-//        disp = "A";
-//        break;
-//      case "SpecialHexB":
-//        color = "green";
-//        disp = "B";
-//        break;
-//      case "SpecialHexC":
-//        color = "green";
-//        disp = "C";
-//        break;
-//      case "Wadi":
-//        color = "black";
-//        disp = "W";
-//        break;
-//      case "ReinforceZoneA":
-//        color = "black";
-//        disp = "A";
-//        break;
-//      case "ReinforceZoneB":
-//        color = "black";
-//        disp = "B";
-//        break;
-//      case "BlocksNonRoad":
-//        color = "blue";
-//        disp = "B";
-//        break;
-//      case "ReinforceZoneC":
-//        color = "black";
-//        disp = "C";
-//        break;
-//    }
-
-            ret +=  "<span style='color:"+color+"'>"+disp+"</span>";
         }
-        return ret;
+        return arr;
     }.property('type.@each','controller.selectedColor','controller.showOne'),
     code:function(){
         var col = this.get('type');

@@ -9,15 +9,18 @@
 
     {{BASE_TAG}}
 
+    <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/hex-tool.css">
   </head>
   <body>
     <script>
-      window.ENV = {{ENV}};
+      window.HexToolENV = {{ENV}};
+      window.EmberENV = window.HexToolENV.EmberENV;
     </script>
+    <script src="assets/vendor.js"></script>
     <script src="assets/hex-tool.js"></script>
     <script>
-      window.HexTool = require('hex-tool/app')['default'].create(ENV.APP);
+      window.HexTool = require('hex-tool/app')['default'].create(HexToolENV.APP);
     </script>
   </body>
 </html>
