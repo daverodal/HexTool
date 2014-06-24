@@ -20,3 +20,4 @@ testem.log
 /.idea
 /app/styles/bourbon
 /app/styles/neat
+/app/styles/.sass-cache
