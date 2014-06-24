@@ -18,5 +18,5 @@ Thumbs.db
 npm-debug.log
 testem.log
 /.idea
-/bourbon
-/neat
+/app/styles/bourbon
+/app/styles/neat
