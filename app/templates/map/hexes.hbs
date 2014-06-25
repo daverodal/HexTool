@@ -5,7 +5,7 @@
         Show HexTypes {{view Ember.Checkbox checkedBinding="controller.showData"}}
         Show only selected terrain Types {{view Ember.Checkbox checkedBinding="controller.showOne"}}
     </div>
-    <div class=""hexHeaderRight">
+    <div class="hexHeaderRight">
         {{#each controller.terrainProperties}} <span {{bind-attr class=color}}>{{disp}}</span> => {{key}}, {{/each}}
     </div>
 </div>

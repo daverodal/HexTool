@@ -4,6 +4,7 @@ import Terrain from "../models/terrain";
 import ImageView from "../views/image-view";
 export default ImageView.extend({
     templateName: "ImageView",
+    isLoading: false,
 
     click: function (e) {
         var offset = this.$().offset();
@@ -47,6 +48,7 @@ export default ImageView.extend({
         }
     },
     didInsertElement: function () {
+        this.set('isLoading',true);
         this._super();
 //        var str = this.get('controller.model.hexes');
         var hhStr = this.get('controller.model.hexStr');
@@ -62,6 +64,7 @@ export default ImageView.extend({
                 }
             }
             that.set('controller.hexData', hexes);
+            that.set('isLoading',false);
         });
      }
 });

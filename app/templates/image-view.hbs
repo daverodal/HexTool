@@ -1,3 +1,7 @@
+{{#if view.isLoading}}
+    <h1>LOADING BE PATIENT !!!</h1>
+{{else}}
+{{/if}}
 <div class="tutWrapper">
 
     <img class="mapImage" {{bind-attr src="mapUrl" }} {{bind-attr style="mapWidth"}}>
