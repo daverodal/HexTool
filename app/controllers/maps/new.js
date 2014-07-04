@@ -11,7 +11,7 @@ export default Ember.ObjectController.extend({
                 hexStr.save().then(function (hexStr) {
                     map.set('hexStr', hexStr);
                     map.save().then(function(){
-                        that.transitionToRoute('map', model.get('id'));
+                        that.transitionTo('map', model.get('id'));
                     });
                 },function(){
                     that.transitionTo('login');

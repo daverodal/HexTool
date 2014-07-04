@@ -2,7 +2,8 @@ module.exports = function(environment) {
   var ENV = {
     baseURL: '/',
     locationType: 'auto',
-    adapterURL: "http://localhost:4200",
+    adapterURL: "http://localhost:4200/rest",
+    pubUrl: "http://localhost:4200/wargame/terrainInit",
     FEATURES: {
       // Here you can enable experimental features on an ember canary build
       // e.g. 'with-controller': true

@@ -40,6 +40,10 @@ export default Ember.Object.create({
         color:"green",
         disp:"O"
     },
+   Sunkenroad:{
+    color:"brown",
+    disp:"O"
+  },
     Mine:{
         color:"red",
         disp:"M"

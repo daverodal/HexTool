@@ -49,6 +49,8 @@ export default ImageView.extend({
     },
     didInsertElement: function () {
         this.set('isLoading',true);
+      var doShow = this.get('controller.showData');
+      this.set('controller.showData', false);
         this._super();
 //        var str = this.get('controller.model.hexes');
         var hhStr = this.get('controller.model.hexStr');
@@ -65,6 +67,7 @@ export default ImageView.extend({
             }
             that.set('controller.hexData', hexes);
             that.set('isLoading',false);
+            that.set('controller.showData', doShow);
         });
      }
 });

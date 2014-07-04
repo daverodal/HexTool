@@ -14,5 +14,7 @@ export default DS.Model.extend({
   c: DS.attr('number'),
   hexSize: DS.attr('number'),
   perfectHexes: DS.attr('boolean'),
+  gameName:DS.attr('string'),
+  scenarioName:DS.attr('string'),
   hexes: DS.attr('string')
 });

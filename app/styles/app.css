@@ -15,6 +15,34 @@ html, body {
   left: 0px;
   top: 0px; }
 
+.success {
+  background: #94d797;
+  border: 5px solid #628e64;
+  display: inline-block;
+  padding: 5px;
+  font-size: 32px;
+  border-radius: 10px;
+  color: white;
+  text-shadow: 2px 2px 1px black;
+  -webkit-animation: fadeout 5s normal;
+  opacity: 0; }
+
+.error {
+  background: #d77b77;
+  border: 5px solid #9b4f4e;
+  display: inline-block;
+  padding: 5px;
+  font-size: 32px;
+  border-radius: 10px;
+  color: white;
+  text-shadow: 2px 2px 1px black; }
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1.0; }
+
+  100% {
+    opacity: 0.0; } }
 li {
   list-style: none; }
 

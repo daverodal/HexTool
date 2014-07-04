@@ -11,6 +11,7 @@ Router.map(function() {
     this.resource('map', {path: ":map_id"}, function () {
       this.route('edit');
       this.route('hexes');
+      this.route('delete');
     });
   });
   this.resource('login');

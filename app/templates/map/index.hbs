@@ -1,11 +1,13 @@
 <li>
-    <button>{{#link-to 'map.edit'}}Edit{{/link-to}}</button>
-    <button>{{#link-to 'map.hexes'}}Hexes{{/link-to}}</button>
+    {{#link-to 'map.edit'}}Edit{{/link-to}}
+    {{#link-to 'map.hexes'}}Hexes{{/link-to}}
+    {{#link-to 'map.delete'}}Delete{{/link-to}}
+
 </li>
 <div class="control-panel">
 
     <ul>
-        <li><span>Urleee:</span> {{mapUrl}}</li>
+        <li><span>Url:</span> {{mapUrl}}</li>
         <li><span>Width:</span> {{mapWidth}}</li>
         <li><span>Num X:</span> {{numX}}</li>
         <li><span>Num Y:</span> {{numY}}</li>
@@ -23,4 +25,14 @@
         </pre>
     </p>
 </div>
+{{#if pubUrl}}
+    <button {{action update}}>Publish</button>
+{{/if}}
+
+{{#if controller.success}}
+    <span class="success" >Published!</span>
+{{/if}}
+{{#if controller.error}}
+    <span class="error">Error!!!</span>
+{{/if}}
 {{view "image-view"}}
