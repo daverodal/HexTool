@@ -29,9 +29,10 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.baseURL = '/neo';
-      ENV.locationType = 'hash';
+    ENV.locationType = 'hash';
 
-      ENV.adapterURL = "http://davidrodal.com/Battle/index.php/rest/"
+    ENV.adapterURL = "http://davidrodal.com/Battle/index.php/rest/";
+    ENV.pubUrl = "http://davidrodal.com/Battle/index.php/wargame/terrainInit/";
   }
 
   return ENV;
