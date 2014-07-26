@@ -96,6 +96,10 @@ export default Ember.Object.create({
     color: "black",
     disp: "W"
   },
+  Elevation: {
+    color: "red",
+    disp: "E"
+  },
   BlocksNonRoad: {
     color: "blue",
     disp: "B"
