@@ -16,5 +16,6 @@ export default DS.Model.extend({
   perfectHexes: DS.attr('boolean'),
   gameName:DS.attr('string'),
   scenarioName:DS.attr('string'),
-  hexes: DS.attr('string')
+  hexes: DS.attr('string'),
+  thoseThings: DS.attr('thoseThings')
 });

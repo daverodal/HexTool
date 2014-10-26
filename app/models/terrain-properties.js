@@ -127,5 +127,13 @@ export default Ember.Object.create({
   ReinforceZoneE: {
     color: "black",
     disp: "E"
+  },
+  ReinforceZoneF: {
+    color: "black",
+    disp: "F"
+  },
+  ReinforceZoneG: {
+    color: "black",
+    disp: "G"
   }
 });
