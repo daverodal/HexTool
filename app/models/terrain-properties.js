@@ -96,6 +96,10 @@ export default Ember.Object.create({
     color: "black",
     disp: "W"
   },
+  Hill: {
+    color: "brown",
+    disp: "H"
+  },
   Slope: {
     color: "green",
     disp: "S"
