@@ -18,6 +18,25 @@ export default Ember.ObjectController.extend(HexPick, {
           that.set('error', false);
         }, 5000);
       });
+    },
+    clone: function(){
+      debugger;
+      var that = this;
+      $.ajax({
+        url: this.get('cloneUrl')
+      }).then(function () {
+        debugger;
+        window.location = HexToolENV.mapsUrl;
+        //that.set('cloned', true);
+        //setTimeout(function(){
+        //  that.set('cloned', false);
+        //}, 5000);
+      },function () {
+        that.set('error', true);
+        setTimeout(function(){
+          that.set('error', false);
+        }, 5000);
+      });
     }
   },
   error: false,
@@ -42,6 +61,15 @@ export default Ember.ObjectController.extend(HexPick, {
     }
     return '';
   }.property('hexId', 'scenarioName', 'gameName'),
+  cloneUrl: function(){
+    debugger;
+    var id = this.get('id');
+    if (id) {
+      debugger;
+      return HexToolENV.cloneUrl + '/' + this.get('id');
+    }
+    return '';
+  }.property('hexId'),
   hexId: false,
   getHexId: function () {
     var that = this;

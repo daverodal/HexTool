@@ -45,7 +45,7 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick, HexPart, {
         this.set('hexData', Ember.A());
       }
     },
-    colors: [ "Town", "Hill", "Trail", "River", "Swamp", "Forest", "Roughone", "Roughtwo", "Mountain", "Road", "Secondaryroad", "Sunkenroad", "Elevation", "Redoubt", "Wadi", "Slope", "ReinforceZoneA", "ReinforceZoneB", "ReinforceZoneC", "ReinforceZoneD", "ReinforceZoneE", "ReinforceZoneF", "ReinforceZoneG", "Blocked", "BlocksNonRoad", "SpecialHexA", "SpecialHexB", "SpecialHexC", "SpecialHexD", "SpecialHexE", "Mine", "Minedroad", "FortA", "FortB"],
+    colors: [ "Town", "Hill", "Trail", "River", "Swamp", "Forest", "Roughone", "Roughtwo", "Mountain", "Road", "Secondaryroad", "Sunkenroad", "Elevation","Elevation2", "Redoubt","Redoubtfront", "Wadi", "Slope", "ReinforceZoneA", "ReinforceZoneB", "ReinforceZoneC", "ReinforceZoneD", "ReinforceZoneE", "ReinforceZoneF", "ReinforceZoneG", "Blocked", "BlocksNonRoad", "SpecialHexA", "SpecialHexB", "SpecialHexC", "SpecialHexD", "SpecialHexE", "Mine", "Minedroad", "FortA", "FortB"],
     selectedColor: "Town"
   }
 );

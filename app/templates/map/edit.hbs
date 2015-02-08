@@ -23,13 +23,16 @@
         <button
             {{action incY }} > + </button>
 
+    isDefault    {{view Ember.Checkbox checkedBinding="isDefault"}}
+
+
     Game Name
     {{input type="text" valueBinding="gameName"}}
     Scenario Name
     {{input type="text" valueBinding="scenarioName"}}
     </p>
     Perfect Hexs
-    {{view Ember.Checkbox checkedBinding="controllers.map.perfectHexes"}}
+    {{view Ember.Checkbox checkedBinding="perfectHexes"}}
     {{#if controllers.map.perfectHexes}}
         Size
         <button

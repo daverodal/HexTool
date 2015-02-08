@@ -4,6 +4,8 @@ module.exports = function(environment) {
     locationType: 'auto',
     adapterURL: "http://localhost:4200/rest",
     pubUrl: "http://localhost:4200/wargame/terrainInit",
+    cloneUrl: "http://localhost:4200/rest/cloneFile",
+    mapsUrl: "http://localhost:4200/maps",
     FEATURES: {
       // Here you can enable experimental features on an ember canary build
       // e.g. 'with-controller': true
@@ -33,6 +35,10 @@ module.exports = function(environment) {
 
     ENV.adapterURL = "http://davidrodal.com/Battle/index.php/rest/";
     ENV.pubUrl = "http://davidrodal.com/Battle/index.php/wargame/terrainInit/";
+    ENV.cloneUrl = "http://davidrodal.com/Battle/index.php/rest/cloneFile/";
+    ENV.mapsUrl = "http://davidrodal.com/neo/#/maps";
+
+
   }
 
   return ENV;

@@ -4,7 +4,6 @@ export default DS.Transform.extend({
         return value;
     },
     deserialize: function(value) {
-      debugger;
         return value;
     }
 });

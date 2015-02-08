@@ -17,5 +17,13 @@ export default DS.Model.extend({
   gameName:DS.attr('string'),
   scenarioName:DS.attr('string'),
   hexes: DS.attr('string'),
-  thoseThings: DS.attr('thoseThings')
+  isDefault: DS.attr('boolean', {defaultValue: true}),
+  thoseThings: DS.attr('thoseThings'),
+  mapWidthStyle: function(){
+    var trail = '';
+    if(this.get('mapWidth').match(/\d/)){
+      trail = 'px';
+    }
+    return "width:"+this.get('mapWidth')+trail;
+  }.property('mapWidth')
 });

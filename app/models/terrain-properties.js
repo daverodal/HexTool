@@ -72,6 +72,10 @@ export default Ember.Object.create({
     color: "purple",
     disp: "B"
   },
+  Redoubtfront: {
+    color: "purple",
+    disp: "f"
+  },
   SpecialHexA: {
     color: "green",
     disp: "A"
@@ -105,6 +109,10 @@ export default Ember.Object.create({
     disp: "S"
   },
   Elevation: {
+    color: "orange",
+    disp: "E"
+  },
+  Elevation2: {
     color: "red",
     disp: "E"
   },

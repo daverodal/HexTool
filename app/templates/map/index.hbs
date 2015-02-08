@@ -16,6 +16,7 @@
         <li><span>Hexside Width:</span> {{a}}</li>
         <li><span>Half Hex Height:</span> {{b}}</li>
         <li><span>Hexside Length:</span> {{c}}</li>
+        <li><span>Is Default:</span> {{isDefault}}</li>
     </ul>
         <pre>
             $this->mapViewer[$player]->setData({{controller.originX}} , {{controller.originY}}, // originX, originY
@@ -28,7 +29,11 @@
 {{#if pubUrl}}
     <button {{action update}}>Publish</button>
 {{/if}}
+<button {{action clone}}>Clone</button>
 
+{{#if controller.cloned}}
+    <span class="success" >Cloned!</span>
+{{/if}}
 {{#if controller.success}}
     <span class="success" >Published!</span>
 {{/if}}
