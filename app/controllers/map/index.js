@@ -7,7 +7,10 @@ export default Ember.ObjectController.extend(HexPick, {
       var that = this;
       $.ajax({
         url: this.get('pubUrl')
-      }).then(function () {
+      }).then(function (arg, arg2, arg3) {
+        if(arg.ok !== true){
+          alert(arg);
+        }
         that.set('success', true);
         setTimeout(function(){
           that.set('success', false);
