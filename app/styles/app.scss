@@ -1,5 +1,10 @@
-@import "bourbon";
-@import "neat";
+$fa-font-path: "../fontawesome/fonts";
+@import '../../vendor/fontawesome/scss/font-awesome';
+
+
+@import "../../vendor/bourbon/dist/bourbon";
+@import "../../vendor/neat/app/assets/stylesheets/neat";
+
 $max-width:1900px;
 html, body {
   margin: 20px;
@@ -71,8 +76,10 @@ li span{
   color:beige;
 }
 
+.purple{
+
+}
 .orange{
-  font:blue;
   color:orange;
 }
 .red{
@@ -102,4 +109,7 @@ li span{
   .hexHeaderRight{
     @include span-columns(9);
   }
+}
+.fa-spinner{
+  font-size:32px;
 }

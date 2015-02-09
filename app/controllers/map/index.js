@@ -5,9 +5,11 @@ export default Ember.ObjectController.extend(HexPick, {
   actions: {
     update: function () {
       var that = this;
+      that.set('updating',true);
       $.ajax({
         url: this.get('pubUrl')
       }).then(function (arg, arg2, arg3) {
+        that.set('updating', false);
         if(arg.ok !== true){
           alert(arg);
         }
@@ -16,6 +18,7 @@ export default Ember.ObjectController.extend(HexPick, {
           that.set('success', false);
         }, 5000);
       },function () {
+        that.set('updating', false);
         that.set('error', true);
         setTimeout(function(){
           that.set('error', false);
@@ -42,6 +45,7 @@ export default Ember.ObjectController.extend(HexPick, {
       });
     }
   },
+  updating: false,
   error: false,
   success: false,
   needs: 'map',

@@ -29,8 +29,12 @@
 {{#if pubUrl}}
     <button {{action update}}>Publish</button>
 {{/if}}
+
 <button {{action clone}}>Clone</button>
 
+{{#if controller.updating}}
+    <i class="fa fa-spinner fa-spin"></i>
+{{/if}}
 {{#if controller.cloned}}
     <span class="success" >Cloned!</span>
 {{/if}}
