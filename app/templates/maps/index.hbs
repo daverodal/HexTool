@@ -1,10 +1,10 @@
 <h2> Pick a map to edit </h2>
 <ul>
     <li>{{#link-to 'maps.new'}}New{{/link-to}}</li>
-    {{#each model}}
+    {{#each game in controller}}
         <li>
-            {{#link-to 'map' this}}{{mapUrl}}
-                <small class='muted'>by {{numX}}</small>
+            {{#link-to 'map' game}}<span class="game-name">{{game.gameName}}</span><span class="scenario-name">{{game.scenarioName}}</span> {{game.mapUrl}}
+                <small class='muted'>by {{numX}} {{numY}}</small>
             {{/link-to}}
         </li>
     {{/each}}

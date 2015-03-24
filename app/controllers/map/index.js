@@ -26,12 +26,10 @@ export default Ember.ObjectController.extend(HexPick, {
       });
     },
     clone: function(){
-      debugger;
       var that = this;
       $.ajax({
         url: this.get('cloneUrl')
       }).then(function () {
-        debugger;
         window.location = HexToolENV.mapsUrl;
         //that.set('cloned', true);
         //setTimeout(function(){
@@ -69,10 +67,8 @@ export default Ember.ObjectController.extend(HexPick, {
     return '';
   }.property('hexId', 'scenarioName', 'gameName'),
   cloneUrl: function(){
-    debugger;
     var id = this.get('id');
     if (id) {
-      debugger;
       return HexToolENV.cloneUrl + '/' + this.get('id');
     }
     return '';

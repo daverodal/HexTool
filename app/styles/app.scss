@@ -55,7 +55,7 @@ li {
   list-style: none;
 }
 li span{
-  width:9em;
+  width:14em;
   display:inline-block;
   text-align: right;
   margin-right:15px;
@@ -112,4 +112,11 @@ li span{
 }
 .fa-spinner{
   font-size:32px;
+}
+a{
+  color:#333 !important;
+}
+a:hover{
+  text-decoration: underline  ;
+  background: #eee;
 }
