@@ -1912,4 +1912,7 @@ a:hover {
   text-decoration: underline;
   background: #eee; }
 
+li span.scenario-name {
+  text-align: left; }
+
 /*# sourceMappingURL=app.css.map */
