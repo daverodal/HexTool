@@ -20,6 +20,18 @@ export default Ember.Object.create({
     color: "green",
     disp: "S"
   },
+  FrozenSwamp: {
+    color: "purple",
+    disp: "S"
+  },
+  Crest: {
+    color: "brown",
+    disp: "C"
+  },
+  Valley: {
+    color: "green",
+    disp: "V"
+  },
   Mountain: {
     color: "brown",
     disp: "M"
@@ -109,6 +121,10 @@ export default Ember.Object.create({
     disp: "S"
   },
   Elevation: {
+    color: "orange",
+    disp: "E"
+  },
+  Elevation1: {
     color: "orange",
     disp: "E"
   },
