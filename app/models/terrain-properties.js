@@ -24,6 +24,10 @@ export default Ember.Object.create({
     color: "purple",
     disp: "S"
   },
+  Orchard: {
+    color: "purple",
+    disp: "O"
+  },
   Crest: {
     color: "brown",
     disp: "C"
