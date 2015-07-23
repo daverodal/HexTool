@@ -12,6 +12,10 @@ export default Ember.Object.create({
     color: "blue",
     disp: "R"
   },
+  Ford: {
+    color: "blue",
+    disp: "F"
+  },
   Forest: {
     color: "green",
     disp: "F"
