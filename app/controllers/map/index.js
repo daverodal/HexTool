@@ -48,10 +48,23 @@ export default Ember.ObjectController.extend(HexPick, {
   success: false,
   needs: 'map',
   originY: function () {
+    var trueRows = this.get('trueRows');
+    //if(trueRows){
+    //  var a = this.get('a');
+    //  var c = this.get('c');
+    //  var yOff = (a + c) * 2 - (c / 2 + a);
+    //  return yOff - this.get('y');
+    //}
+
     var b = this.get('b');
     return b * 3 - this.get('y');
   }.property('b', 'y'),
   originX: function () {
+    var trueRows = this.get('trueRows');
+    //if(trueRows){
+    //  var b = this.get('b');
+    //  return b * 3 - this.get('y');
+    //}
     var a = this.get('a');
     var c = this.get('c');
     var xOff = (a + c) * 2 - (c / 2 + a);

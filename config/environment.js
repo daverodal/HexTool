@@ -33,11 +33,16 @@ module.exports = function(environment) {
     ENV.baseURL = '/neo';
     ENV.locationType = 'hash';
 
-    ENV.adapterURL = "http://davidrodal.com/Battle/index.php/rest/";
-    ENV.pubUrl = "http://davidrodal.com/Battle/index.php/wargame/terrainInit/";
-    ENV.cloneUrl = "http://davidrodal.com/Battle/index.php/rest/cloneFile/";
-    ENV.mapsUrl = "http://davidrodal.com/neo/#/maps";
+    //ENV.adapterURL = "http://davidrodal.com/Battle/index.php/rest/";
+    //ENV.pubUrl = "http://davidrodal.com/Battle/index.php/wargame/terrainInit/";
+    //ENV.cloneUrl = "http://davidrodal.com/Battle/index.php/rest/cloneFile/";
+    //ENV.mapsUrl = "http://davidrodal.com/neo/#/maps";
 
+    ENV.adapterURL = "http://davidrodal.com/rest";
+    ENV.pubUrl = "http://davidrodal.com/wargame/terrainInit";
+    ENV.cloneUrl = "http://davidrodal.com/rest/cloneFile" +
+        "";
+    ENV.mapsUrl = "http://davidrodal.com/neo/#/maps";
 
   }
 

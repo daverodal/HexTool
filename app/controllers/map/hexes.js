@@ -45,7 +45,17 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick, HexPart, {
         this.set('hexData', Ember.A());
       }
     },
-    colors: [ "Town", "Hill", "Trail", "River","Ford", "Swamp","FrozenSwamp", "Crest", "Valley", "Forest", "Orchard", "Roughone", "Roughtwo", "Mountain", "Road", "Secondaryroad", "Sunkenroad", "Elevation", "Elevation1", "Elevation2", "Redoubt","Redoubtfront", "Wadi", "Slope", "ReinforceZoneA", "ReinforceZoneB", "ReinforceZoneC", "ReinforceZoneD", "ReinforceZoneE", "ReinforceZoneF", "ReinforceZoneG", "ReinforceZoneH", "ReinforceZoneI", "ReinforceZoneJ", "ReinforceZoneK", "ReinforceZoneL", "ReinforceZoneM", "ReinforceZoneN", "ReinforceZoneO", "ReinforceZoneP", "Blocked", "BlocksNonRoad", "SpecialHexA", "SpecialHexB", "SpecialHexC", "SpecialHexD", "SpecialHexE", "Mine", "Minedroad", "FortA", "FortB"],
+    colors: [ "Town", "Hill", "Trail", "River","Ford", "Swamp","FrozenSwamp", "Crest", "Valley", "Forest", "Orchard", "Roughone", "Roughtwo", "Mountain", "Road", "Secondaryroad", "Sunkenroad", "Elevation", "Elevation1", "Elevation2", "Redoubt","Redoubtfront", "Wadi", "Slope", "ReinforceZoneA", "ReinforceZoneB", "ReinforceZoneC", "ReinforceZoneD", "ReinforceZoneE", "ReinforceZoneF", "ReinforceZoneG", "ReinforceZoneH", "ReinforceZoneI", "ReinforceZoneJ", "ReinforceZoneK", "ReinforceZoneL", "ReinforceZoneM", "ReinforceZoneN", "ReinforceZoneO", "ReinforceZoneP", "Blocked", "BlocksNonRoad", "SpecialHexA", "SpecialHexB", "SpecialHexC", "SpecialHexD", "SpecialHexE", "Mine", "Minedroad", "FortA", "FortB",
+    "EGC","EGR","EGM",
+        "POC","POR","POM",
+        "CZC","CZR","CZM",
+        "HUC","HUR","HUM",
+        "RMC","RMR","RMM",
+        "BUC","BUR","BUM",
+        "NAC","NAR","NAM",
+        "SVC","SVR","SVM",
+
+    ],
     selectedColor: "Town"
   }
 );

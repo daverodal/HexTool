@@ -39,7 +39,7 @@ export default Ember.ObjectController.extend(DrawMixin, HexPick, {
   doSomething: function () {
 
     Ember.run.once(this, 'justOneTime');
-  }.observes('c', 'a', 'b', 'numX', 'numY'),
+  }.observes('c', 'a', 'b', 'numX', 'numY','trueRows'),
   justOneTime: function () {
     this.doDraw(this.get('numX'), this.get('numY'));
   }

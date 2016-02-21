@@ -6,7 +6,8 @@ export default Ember.Mixin.create({
         B = this.get('b') - 0;
         C = this.get('c') - 0;
 
-        var trueCols = true;
+        var trueCols = !this.get('trueRows');
+        trueCols = true;/* weld that shut */
 
         var canvas = document.getElementById('tutorial');
         if (!canvas) {

@@ -18,6 +18,7 @@ export default DS.Model.extend({
   scenarioName:DS.attr('string'),
   hexes: DS.attr('string'),
   isDefault: DS.attr('boolean', {defaultValue: true}),
+  trueRows: DS.attr('boolean',{defaultValue: false}),
   thoseThings: DS.attr('thoseThings'),
   mapWidthStyle: function(){
     var trail = '';

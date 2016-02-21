@@ -207,5 +207,125 @@ export default Ember.Object.create({
   ReinforceZoneP: {
     color: "black",
     disp: "P"
-  }
+  },
+
+
+  EGC: {
+    color: "black",
+    disp: "C"
+  },
+  EGR: {
+    color: "black",
+    disp: "R"
+  },
+  EGM: {
+    color: "black",
+    disp: "M"
+  },
+
+
+  POC: {
+    color: "black",
+    disp: "C"
+  },
+  POR: {
+    color: "black",
+    disp: "R"
+  },
+  POM: {
+    color: "black",
+    disp: "M"
+  },
+
+
+  CZC: {
+    color: "black",
+    disp: "C"
+  },
+  CZR: {
+    color: "black",
+    disp: "R"
+  },
+  CZM: {
+    color: "black",
+    disp: "M"
+  },
+
+
+  HUC: {
+    color: "black",
+    disp: "C"
+  },
+  HUR: {
+    color: "black",
+    disp: "R"
+  },
+  HUM: {
+    color: "black",
+    disp: "M"
+  },
+
+
+
+  RMC: {
+    color: "black",
+    disp: "C"
+  },
+  RMR: {
+    color: "black",
+    disp: "R"
+  },
+  RMM: {
+    color: "black",
+    disp: "M"
+  },
+
+
+
+  BUC: {
+    color: "black",
+    disp: "C"
+  },
+  BUR: {
+    color: "black",
+    disp: "R"
+  },
+  BUM: {
+    color: "black",
+    disp: "M"
+  },
+
+
+  NAC: {
+    color: "black",
+    disp: "C"
+  },
+  NAR: {
+    color: "black",
+    disp: "R"
+  },
+  NAM: {
+    color: "black",
+    disp: "M"
+  },
+
+
+  SVC: {
+    color: "black",
+    disp: "C"
+  },
+  SVR: {
+    color: "black",
+    disp: "R"
+  },
+  SVM: {
+    color: "black",
+    disp: "M"
+  },
+
+
+
+
+
+
 });
